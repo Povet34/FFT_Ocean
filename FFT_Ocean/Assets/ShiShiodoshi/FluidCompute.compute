@@ -1,0 +1,33 @@
+#pragma kernel CSMain
+
+struct FluidParticle
+{
+    float2 position; // 물 입자의 위치
+    float2 velocity; // 물 입자의 속도
+    float mass; // 물 입자의 질량
+};
+
+RWStructuredBuffer<FluidParticle> particles;
+float deltaTime;
+
+[numthreads(64, 1, 1)]
+void CSMain(uint3 id : SV_DispatchThreadID)
+{
+    uint index = id.x;
+    
+    FluidParticle p = particles[index];
+
+    // 간단한 중력 적용
+    float2 gravity = float2(0.0, -9.8);
+    p.velocity += gravity * deltaTime;
+    p.position += p.velocity * deltaTime;
+
+    // 바닥 충돌
+    if (p.position.y < 0)
+    {
+        p.position.y = 0;
+        p.velocity.y *= -0.5;
+    }
+
+    particles[index] = p;
+}
