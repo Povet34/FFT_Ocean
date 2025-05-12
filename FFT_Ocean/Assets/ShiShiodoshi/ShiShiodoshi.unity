@@ -128,7 +128,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 601261360}
-  - component: {fileID: 601261359}
+  - component: {fileID: 601261362}
   m_Layer: 0
   m_Name: FluidController
   m_TagString: Untagged
@@ -136,23 +136,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &601261359
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 601261358}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0e871be9a29df24286bba7daac9de59, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fluidShader: {fileID: 7200000, guid: cabb9fad586fbf34f85f1926585d67bb, type: 3}
-  waterMesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
-  waterMat: {fileID: 2100000, guid: d3991ed3c6a3e6a45b7666bf5201f5ad, type: 2}
-  spawnInterval: 0.01
-  poolSize: 1000
 --- !u!4 &601261360
 Transform:
   m_ObjectHideFlags: 0
@@ -168,6 +151,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &601261362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 601261358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7df83fb149ab5345bdfdde681c76624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fluidShader: {fileID: 7200000, guid: cabb9fad586fbf34f85f1926585d67bb, type: 3}
+  waterMesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  waterMat: {fileID: 2100000, guid: 7348e06e5b3d0b442b4743d7db9c7542, type: 2}
+  spawnInterval: 0.05
+  poolSize: 5000
 --- !u!1 &1206627519
 GameObject:
   m_ObjectHideFlags: 0

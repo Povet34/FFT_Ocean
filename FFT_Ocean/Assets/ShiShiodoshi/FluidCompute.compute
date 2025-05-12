@@ -31,7 +31,7 @@ void CSSetGravity(uint id : SV_DispatchThreadID)
         if (particle.position.y <= 0.0f)
         {
             particle.position.y = 0.0f;
-            particle.velocity.y *= -0.5f; // 반사 및 감쇠
+            particle.velocity.y *= -0.3f; // 반사 및 감쇠
         }
 
         // 수명 감소
