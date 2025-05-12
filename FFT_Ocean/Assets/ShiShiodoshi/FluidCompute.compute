@@ -2,10 +2,11 @@
 
 struct FluidParticle
 {
-    float2 position;
-    float2 velocity;
+    float3 position;
+    float3 velocity;
     float mass;
     float lifetime;
+    int isActive; // 활성화 여부
 };
 
 RWStructuredBuffer<FluidParticle> particles;
@@ -16,12 +17,11 @@ void CSMain(uint id : SV_DispatchThreadID)
 {
     FluidParticle particle = particles[id];
 
-    // 수명이 남아있는 경우에만 처리
-    if (particle.lifetime > 0.0f)
+    // 활성화된 입자만 처리
+    if (particle.isActive == 1 && particle.lifetime > 0.0f)
     {
-        float2 gravity = float2(0.0f, -9.8f);
-        
         // 중력 적용
+        float3 gravity = float3(0.0f, -9.8f, 0.0f);
         particle.velocity += gravity * deltaTime;
 
         // 위치 업데이트
