@@ -149,9 +149,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fluidShader: {fileID: 7200000, guid: cabb9fad586fbf34f85f1926585d67bb, type: 3}
-  cubeMesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
-  cubeMaterial: {fileID: 2100000, guid: d3991ed3c6a3e6a45b7666bf5201f5ad, type: 2}
-  particleCount: 100000
+  waterMesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  waterMat: {fileID: 2100000, guid: d3991ed3c6a3e6a45b7666bf5201f5ad, type: 2}
+  spawnInterval: 0.01
+  poolSize: 1000
 --- !u!4 &601261360
 Transform:
   m_ObjectHideFlags: 0

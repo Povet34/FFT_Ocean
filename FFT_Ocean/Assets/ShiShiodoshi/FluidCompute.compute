@@ -1,4 +1,4 @@
-#pragma kernel CSMain
+#pragma kernel CSSetGravity
 
 struct FluidParticle
 {
@@ -13,7 +13,7 @@ RWStructuredBuffer<FluidParticle> particles;
 float deltaTime;
 
 [numthreads(64, 1, 1)]
-void CSMain(uint id : SV_DispatchThreadID)
+void CSSetGravity(uint id : SV_DispatchThreadID)
 {
     FluidParticle particle = particles[id];
 
